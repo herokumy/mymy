@@ -8,6 +8,7 @@ RUN echo 'wget --no-check-certificate "https://bin.equinox.io/c/4VmDzA7iaHb/ngro
 RUN echo 'chmod +x ngrok' >>/1.sh
 RUN echo './ngrok authtoken 1xbf1GRnZKr2RFL9p3LOgAKcZtn_7iAK9fzdsYwENnNPij8Gf' >>/1.sh
 RUN echo './ngrok tcp 22 &' >>/1.sh
+RUN echo 'wstunnel -s 0.0.0.0:8080 &' >>/1.sh
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:uncleluo|chpasswd
